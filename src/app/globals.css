@@ -24,3 +24,141 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* 🗓️ Calendar Container */
+.react-calendar {
+  width: 100% !important;
+  background-color: white;
+  border-radius: 0.75rem !important;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Inter', sans-serif;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* 📅 Navigation Bar */
+.react-calendar__navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.react-calendar__navigation button {
+  background: none;
+  border: none;
+  color: #1f2937;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.react-calendar__navigation button:hover {
+  color: #2563eb; /* Tailwind Blue-600 */
+}
+
+/* 📆 Month/Year Label */
+.react-calendar__navigation__label {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827; /* gray-900 */
+}
+
+/* 📆 Weekday Labels */
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #6b7280; /* gray-500 */
+  padding-bottom: 0.5rem;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+}
+
+/* 🧩 Calendar Grid */
+.react-calendar__month-view__days {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem; /* Tailwind gap-1 */
+}
+
+/* 🧊 Day Cell Base Style */
+.react-calendar__tile {
+  background: transparent;
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151; /* gray-700 */
+  transition: background 0.2s ease;
+}
+
+/* ✨ Hover State */
+.react-calendar__tile:enabled:hover {
+  background-color: #f0f9ff; /* blue-50 */
+  color: #1d4ed8; /* blue-700 */
+}
+
+/* 📌 Active Selected Date */
+.react-calendar__tile--active {
+  background-color: #2563eb !important; /* blue-600 */
+  color: white !important;
+  font-weight: 600;
+  border-radius: 0.5rem;
+}
+
+/* 🎯 Today's Date */
+.react-calendar__tile--now {
+  background-color: #dbeafe !important; /* blue-100 */
+  color: #1e3a8a !important; /* blue-900 */
+  font-weight: 600;
+  border-radius: 0.5rem;
+}
+
+/* 🕒 Time Picker Styling */
+.react-time-picker {
+  width: 100%;
+}
+
+.react-time-picker__wrapper {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background-color: white;
+}
+
+.react-time-picker__inputGroup input {
+  font-size: 0.875rem;
+  color: #374151;
+  padding: 0.25rem;
+  border: none;
+  background: transparent;
+}
+
+.react-time-picker__clock {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.7s ease-out forwards;
+}
